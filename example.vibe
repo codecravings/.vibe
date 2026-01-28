@@ -1,0 +1,44 @@
+# AI-Commerce Project
+# Example .vibe file demonstrating the DSL syntax
+
+project = "AI-Commerce"
+victim = web-fullstack
+frontend = react
+backend = express
+db = mongodb
+ai = ["recommendations", "chatbot"]
+
+tools = ["tailwind", "jwt", "vite", "docker"]
+mcp = ["browser", "fs", "shell"]
+
+test = True
+explain = True
+chaos-level = 1
+
+task = "Build an AI-powered ecommerce site with login, product listings, cart, checkout, recommendations, and basic chatbot support."
+
+# Pre-build setup
+before {
+    shell "mkdir -p ai-commerce"
+}
+
+# Build steps
+ask "scaffold full MERN folder structure"
+ask "install necessary dependencies and create boilerplate code"
+ask "implement auth, product, cart, and order routes"
+ask "add recommendation engine endpoint"
+ask "add basic chatbot endpoint"
+ask "generate React frontend pages and components"
+ask "write Dockerfile and docker-compose.yml"
+
+# Conditional test generation
+if test == True {
+    ask "generate unit tests for backend"
+}
+
+ask "produce README.md and project setup steps"
+
+# Post-build tasks
+after {
+    shell "echo 'Build complete!'"
+}
